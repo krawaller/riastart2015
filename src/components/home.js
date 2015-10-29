@@ -9,7 +9,7 @@ var Home = React.createClass({
 		var battleprops = this.props.battle;
 		return (
 			<div>
-				<Battlers alive={battleprops.alive} kill={this.props.kill} />
+				<Battlers doing={battleprops.doing} kill={this.props.kill} duck={this.props.duck} />
 				<Log log={battleprops.log}/>
 				{ battleprops.standing === 1 && <button onClick={this.props.reset}>Reset</button> }
 			</div>
@@ -27,7 +27,10 @@ var mapStateToProps = function(state){
 var mapDispatchToProps = function(dispatch){
 	return {
 		kill: function(killer,victim){
-			dispatch(actions.killHero(killer,victim));
+			dispatch(actions.aimAt(killer,victim));
+		},
+		duck: function(coward){
+			dispatch(actions.duckDown(coward));
 		},
 		reset: function(){
 			dispatch(actions.reset());

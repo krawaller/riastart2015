@@ -9,21 +9,23 @@ var Battler = React.createClass({
 		var p = this.props,
 			name = p.name,
 			link = <Link to={"/hero/"+name}>{name}</Link>,
-			alive = p.alive,
-			killable = _.reduce(alive,function(list,standing,opp){
-				return standing && opp!==name ? list.concat(opp) : list;
+			doing = p.doing,
+			killable = _.reduce(doing,function(list,status,opp){
+				return status !== "dead" && opp!==name ? list.concat(opp) : list;
 			},[]),
 			buttons = killable.map(function(opp){
 				return <button key={opp} onClick={p.kill.bind(this,opp)}>{"Kill "+opp}</button>;
-			},this);
-		if (p.alive[name]){
-			return <div className="battler">
-				<p>{link}</p>
-				{buttons.length ? buttons : <p>Winner!!</p>}
-			</div>;
-		} else {
-			return <div className="battler dead"><p>{link}</p><p>...dead...</p></div>;
-		}
+			},this).concat(<button key="duck" onClick={p.duck}>duck</button>);
+		var info = {
+			waiting: buttons.length ? buttons : <p>Winner!!</p>,
+			ducking: "ducking",
+			dead: "...dead...",
+			aiming: "aiming!"
+		}[p.doing[name]];
+		return <div className="battler">
+			<Link to={"/hero/"+name}>{name}</Link>
+			<div>{info}</div>
+		</div>;
 	}
 });
 

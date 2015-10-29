@@ -22,7 +22,7 @@ module.exports = function(){
 			}
 		},
 		battlefield: {
-			alive: {batman:1,superman:1,spiderman:1},
+			doing: {batman:"waiting",superman:"waiting",spiderman:"waiting"},
 			standing: 3,
 			log: ["Ready.... fight!"]
 		}

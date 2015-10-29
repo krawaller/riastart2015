@@ -4,9 +4,10 @@ var React = require("react"),
 
 var Battlers = React.createClass({
 	render: function(){
-		var p = this.props, boxes = _.map(p.alive,function(alive,name){
-			var kill = p.kill.bind(this,name); // prefill the kill method so that killer is always `name`
-			return <Battler key={name} name={name} alive={p.alive} kill={kill} />;
+		var p = this.props, boxes = _.map(p.doing,function(doing,name){
+			var kill = p.kill.bind(this,name), // prefill the kill method so that killer is always `name`
+				duck = p.duck.bind(this,name); // make sure battler can only duck himself
+			return <Battler key={name} name={name} doing={p.doing} kill={kill} duck={duck} />;
 		},this);
 		return <div className="battlers">{boxes}</div>;
 	}

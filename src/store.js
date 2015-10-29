@@ -1,3 +1,8 @@
+/*
+This file defines the main Redux Store. It will be required by all "smart" components in the app,
+in our case Home and Hero.
+*/
+
 var Redux = require("redux"),
 	heroReducer = require("./reducers/heroes"),
 	battlefieldReducer = require("./reducers/battlefield"),
@@ -10,3 +15,4 @@ var rootReducer = Redux.combineReducers({
 });
 
 module.exports = Redux.applyMiddleware(thunk)(Redux.createStore)(rootReducer,initialState());
+

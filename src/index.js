@@ -8,10 +8,11 @@ var React = require('react'),
 	Router = require('react-router').Router,
 	Provider = require('react-redux').Provider,
 	store = require('./store'),
-	routes = require('./routes'),
-	createBrowserHistory = require('history/lib/createBrowserHistory');
+	routes = require('./routes');
 
 ReactDOM.render(
+	// The top-level Provider is what allows us to `connect` components to the store
+	// using ReactRedux.connect (see components Home and Hero)
 	<Provider store={store}>
 		<Router routes={routes}/>
 	</Provider>,

@@ -5,6 +5,8 @@ it in the reducers when we do the Reset action.
 It returns a function instead of an object to make sure no one can change the initial state.
 */
 
+var C = require("./constants");
+
 module.exports = function(){
 	return {
 		heroes: {
@@ -26,7 +28,7 @@ module.exports = function(){
 			}
 		},
 		battlefield: {
-			doing: {batman:"waiting",superman:"waiting",spiderman:"waiting","he-man":"waiting"},
+			doing: {batman:C.WAITING,superman:C.WAITING,spiderman:C.WAITING,"he-man":C.WAITING},
 			standing: 4,
 			log: ["Ready.... fight!"]
 		}

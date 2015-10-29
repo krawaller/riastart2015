@@ -1,8 +1,14 @@
 var React = require("react"),
+	ptypes = React.PropTypes,
 	Battler = require("./battler"),
 	_ = require("lodash");
 
 var Battlers = React.createClass({
+	propTypes: {
+		kill: ptypes.func.isRequired,
+		duck: ptypes.func.isRequired,
+		doing: ptypes.object.isRequired
+	},
 	render: function(){
 		var p = this.props, boxes = _.map(p.doing,function(doing,name){
 			var kill = p.kill.bind(this,name), // prefill the kill method so that killer is always `name`

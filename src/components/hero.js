@@ -1,10 +1,15 @@
 // This component shows a single battler in the arena.
 
 var React = require("react"),
+	ptypes = React.PropTypes,
 	Link = require("react-router").Link,
 	ReactRedux = require("react-redux");
 
 var Hero = React.createClass({
+	propTypes: {
+		params: ptypes.shape({name:ptypes.string.isRequired}).isRequired, // will be provided by react-router
+		heroes: ptypes.object.isRequired // will be provided by react-redux
+	},
 	render: function(){
 		var name = this.props.params.name,
 			data = this.props.heroes[name];

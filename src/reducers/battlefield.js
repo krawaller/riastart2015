@@ -36,9 +36,13 @@ module.exports = function(state,action){
 					newstate.log.push(action.killer+" blasts "+action.victim+"'s corpse.");
 				// we kill the target!
 				} else {
+					if (state.doing[action.victim]==="aiming"){
+						newstate.log.push(action.killer+" killed "+action.victim+" before he got his shot off!");
+					} else {
+						newstate.log.push(action.killer+" killed "+action.victim+"!");
+					}
 					newstate.doing[action.victim] = "dead";
 					newstate.standing = newstate.standing - 1;
-					newstate.log.push(action.killer+" killed "+action.victim+"!");
 					if (newstate.standing === 1){
 						newstate.log.push(action.killer+" WINS!!");
 					}

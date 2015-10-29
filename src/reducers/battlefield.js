@@ -11,7 +11,7 @@ module.exports = function(state,action){
 		case constants.KILL_HERO:
 			newstate.alive[action.victim] = 0;
 			newstate.standing = newstate.standing - 1;
-			newstate.log.push(action.killer+" killed "+action.victim+"!");
+			newstate.log.push(action.killer+" killed "+action.victim+" at "+action.at+"!");
 			if (newstate.standing === 1){
 				newstate.log.push(action.killer+" WINS!!");
 			}

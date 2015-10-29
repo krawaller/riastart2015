@@ -17,7 +17,7 @@ var Battler = React.createClass({
 				return <button key={opp} onClick={p.kill.bind(this,opp)}>{"Kill "+opp}</button>;
 			},this).concat(<button key="duck" onClick={p.duck}>duck</button>);
 		var info = {
-			waiting: buttons.length ? buttons : <p>Winner!!</p>,
+			waiting: buttons.length > 1 ? buttons : "Winner!!",
 			ducking: "ducking",
 			dead: "...dead...",
 			aiming: "aiming!"

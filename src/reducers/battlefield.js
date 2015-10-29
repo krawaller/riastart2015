@@ -4,6 +4,8 @@ var constants = require("../constants"),
 /*
 A reducer is a function that takes the current state and an action, and then returns a
 new state.
+
+Note: the hero states (in `doing`) should really be made into constants too...
 */
 module.exports = function(state,action){
 	var newstate = Object.assign({},state);

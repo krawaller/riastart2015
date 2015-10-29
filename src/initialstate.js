@@ -19,11 +19,15 @@ module.exports = function(){
 			spiderman: {
 				quote: "Why don't you love me, Lois?",
 				kills: 0
+			},
+			"he-man": {
+				quote: "By the power of Grayskull!",
+				kills: 0
 			}
 		},
 		battlefield: {
-			doing: {batman:"waiting",superman:"waiting",spiderman:"waiting"},
-			standing: 3,
+			doing: {batman:"waiting",superman:"waiting",spiderman:"waiting","he-man":"waiting"},
+			standing: 4,
 			log: ["Ready.... fight!"]
 		}
 	};

@@ -19,7 +19,7 @@ module.exports = function(){
 				kills: 0
 			},
 			spiderman: {
-				quote: "Why don't you love me, Lois?",
+				quote: "It's your friendly neighborhood Spider-man!",
 				kills: 0
 			},
 			"he-man": {

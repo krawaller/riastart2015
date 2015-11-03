@@ -1,6 +1,5 @@
 // This component shows a single battler in the arena. It is used by the Battlers component
 
-
 var React = require("react"),
 	ptypes = React.PropTypes,
 	_ = require("lodash"),
@@ -24,7 +23,7 @@ var Battler = React.createClass({
 			// make buttons for all killable enemies
 			buttons = killable.map(function(opp){
 				return <button key={opp} onClick={p.kill.bind(this,opp)}>{"Kill "+opp}</button>;
-			},this).concat(<button key="duck" onClick={p.duck}>duck</button>);
+			},this).concat(<button key="duck" onClick={p.duck}>duck</button>); // ...as well as a duck button
 		//controls depend on what we're doing
 		var controls = { // using ES6 syntax for dynamic object properties
 			[C.WAITING]: buttons.length > 1 ? buttons : "Winner!!",

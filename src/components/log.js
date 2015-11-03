@@ -9,9 +9,10 @@ var Log = React.createClass({
 		log: ptypes.arrayOf(ptypes.string).isRequired
 	},
 	render: function(){
-		return <ul>{this.props.log.map(function(txt,n){
+		var list = this.props.log.map(function(txt,n){
 			return <li key={n}>{txt}</li>;
-		})}</ul>;
+		});
+		return <ul>{list}</ul>;
 	}
 });
 

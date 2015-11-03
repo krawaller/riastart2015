@@ -27,7 +27,7 @@ var Hero = React.createClass({
 // connect to Redux store
 
 var mapStateToProps = function(state){
-	// This component will have access to `appstate.battlefield` through `this.props.battle`
+	// This component will have access to `appstate.heroes` through `this.props.heroes`
 	return {heroes:state.heroes};
 };
 

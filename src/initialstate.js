@@ -9,6 +9,7 @@ var C = require("./constants");
 
 module.exports = function(){
 	return {
+		// "persistent" data on heroes
 		heroes: {
 			batman: {
 				quote: "I'm batman.",
@@ -27,6 +28,7 @@ module.exports = function(){
 				kills: 0
 			}
 		},
+		// data on the current battle
 		battlefield: {
 			doing: {batman:C.WAITING,superman:C.WAITING,spiderman:C.WAITING,"he-man":C.WAITING},
 			standing: 4,

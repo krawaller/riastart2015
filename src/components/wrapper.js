@@ -9,7 +9,7 @@ var Wrapper = React.createClass({
     render: function() {
         return (
             <div className="wrapper">
-                <h2>Superhero battle arena 2000!</h2>
+                <h2>Superhero battle arena 2000 - now with Webpack!</h2>
                 {this.props.children}
             </div>
         );

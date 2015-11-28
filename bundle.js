@@ -25303,7 +25303,7 @@
 	            React.createElement(
 	                "h2",
 	                null,
-	                "Superhero battle arena 2000!"
+	                "Superhero battle arena 2000 - now with Webpack!"
 	            ),
 	            this.props.children
 	        );
